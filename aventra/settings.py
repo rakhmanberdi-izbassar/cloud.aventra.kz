@@ -7,16 +7,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # ✅ Мынау нақты .env файлдың жолы
 dotenv_path = BASE_DIR / '.env'
 
-# ✅ Егер файл табылмаса — консольге ескерту
-if not dotenv_path.exists():
-    print("⚠️ .env файлы табылмады:", dotenv_path)
-else:
-    load_dotenv(dotenv_path=dotenv_path)
-    print("✅ .env жүктелді:", dotenv_path)
-
-# Тестілеу үшін басып шығару:
-print("🔍 DB_NAME:", os.getenv("DB_NAME"))
-print("🔍 DB_HOST:", os.getenv("DB_HOST"))
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
