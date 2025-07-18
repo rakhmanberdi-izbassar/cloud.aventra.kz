@@ -1,4 +1,5 @@
 from rest_framework import viewsets, status
+from rest_framework.views import APIView
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from django.db.models import Q
@@ -66,7 +67,7 @@ class LocationListCreateView(generics.ListCreateAPIView):
     queryset = Location.objects.select_related('city').all()
     serializer_class = LocationSerializer
 
-class LocationUpdateDeleteView(generics.RetrieveUpdateDestroyAPIView):
+class LocationViewSet(viewsets.ModelViewSet):
     queryset = Location.objects.all()
     serializer_class = LocationSerializer
 

@@ -19,7 +19,7 @@ class TourImageAdmin(admin.ModelAdmin):
 
 @admin.register(Location)
 class LocationAdmin(admin.ModelAdmin):
-    list_display = ('name', 'city')  # Админкада көрсетілетін бағандар
+    list_display = ('name_kz', 'name_en', 'city')
 
 @admin.register(City)
 class CityAdmin(admin.ModelAdmin):

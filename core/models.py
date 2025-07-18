@@ -16,11 +16,18 @@ class City(models.Model):
 
 
 class Location(models.Model):
-    name = models.CharField(max_length=255)
-    city = models.ForeignKey(City, on_delete=models.CASCADE, related_name='locations' , null=True)
+    name_kz = models.CharField(max_length=255, blank=True, null=True)
+    name_en = models.CharField(max_length=255)
+    city = models.ForeignKey(
+        City, 
+        on_delete=models.CASCADE, 
+        related_name='locations',
+        null=True
+    )
 
     def __str__(self):
-        return f"{self.name} ({self.city.name})"
+        return self.name_kz
+
 
 class Tour(models.Model):
     name = models.CharField(max_length=255)
